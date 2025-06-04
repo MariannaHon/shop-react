@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Bottoms",
+    "slug": "bottoms",
+    "_id": "63b9d58a01dc8bc2a732c34e",
+    "createdAt": "2023-01-07T20:26:50.438Z",
+    "updatedAt": "2023-01-07T20:26:50.438Z"
+  },
+  {
+    "name": "Tops",
+    "slug": "tops",
+    "_id": "63b9d61375a3b24e4c17a724",
+    "createdAt": "2023-01-07T20:29:07.908Z",
+    "updatedAt": "2023-01-07T20:29:07.908Z"
+  },
+  {
+    "name": "Shoes & More",
+    "slug": "shoes-and-more",
+    "_id": "63b9d67b909f069dd834a11e",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Collections",
+    "slug": "collections",
+    "_id": "65c4d0b6a37f11cfe9a30892",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  }
+]

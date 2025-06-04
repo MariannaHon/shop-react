@@ -1,0 +1,109 @@
+@use '../abstracts/variables' as *;
+
+body {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: $black;
+    text-transform: uppercase;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    &--large {
+        font-size: 1.6rem;
+    }
+
+    &--bold {
+        font-weight: 700;
+    }
+
+    &--small {
+        font-size: 1.1rem;
+    }
+}
+
+.heading {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.5;
+
+    text-transform: capitalize;
+
+    &--2 {
+        font-size: 3rem;
+    }
+
+    &--3 {
+        font-size: 2rem;
+    }
+
+    &--4 {
+        font-size: 1.5rem;
+    }
+
+    &-sub {
+        font-size: 2.1rem;
+        &--2 {
+            font-size: 1.7rem;
+        }
+
+        &--3 {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.label {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    &--small {
+        font-size: 1.4rem;
+    }
+
+    &--bold {
+        font-weight: 700;
+    }
+}
+
+.mb {
+    &-10 {
+        margin-bottom: 1rem;
+    }
+    &-20 {
+        margin-bottom: 2rem;
+    }
+    &-40 {
+        margin-bottom: 4rem;
+    }
+    &-60 {
+        margin-bottom: 6rem;
+    }
+    &-80 {
+        margin-bottom: 8rem;
+    }
+}
+
+.triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.4rem;
+    width: 6rem;
+    height: 4.8rem;
+    font-size: $small;
+    text-align: start;
+    color: $white;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    &-new {
+        background-color: #000;
+    }
+    &-sale {
+        background-color: red;
+    }
+}

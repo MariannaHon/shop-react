@@ -1,0 +1,39 @@
+.skeleton-loader {
+  background-color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.skeleton-loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 150%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+img {
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+

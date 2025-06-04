@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Levi's",
+    "_id": "65c60462e4b66e91ecc26af9"
+  },
+  {
+    "name": "Clarks",
+    "_id": "65c60467709970779fe42881"
+  },
+  {
+    "name": "Tommy Hilfiger",
+    "_id": "65c6046b2dfd88e056c22009"
+  },
+  {
+    "name": "Nike",
+    "_id": "65c60473810257e739e4713a"
+  },
+  {
+    "name": "Converse",
+    "_id": "65c604af6dbb9f4fa9649af7"
+  },
+  {
+    "name": "Adidas",
+    "_id": "65c6047df0fd887cb9207bc2"
+  },
+  {
+    "name": "Timberland",
+    "_id": "65c60480c2ebfb9554692555"
+  },
+  {
+    "name": "Zara",
+    "_id": "65c60484637ab311f8ba4ab7"
+  },
+  {
+    "name": "Hugo Boss",
+    "_id": "65c604873487ed006b55175e"
+  }
+]

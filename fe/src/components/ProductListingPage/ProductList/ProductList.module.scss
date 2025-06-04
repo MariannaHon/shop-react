@@ -1,0 +1,29 @@
+.productListSection {
+    width: 70rem;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.productList {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 31.32%;
+}
+
+.wideProduct {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}

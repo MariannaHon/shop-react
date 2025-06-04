@@ -1,0 +1,120 @@
+@use '../../sass/abstracts/variables' as *;
+
+.header {
+    width: 100%;
+    background-color: $white;
+    color: $black;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    .top-bar {
+        background-color: $black;
+        color: $white;
+        padding: 1rem 0;
+        .links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+
+            &-main {
+                display: inline-block;
+                padding: 0 1rem;
+                position: relative;
+                color: $grey;
+                text-decoration: none;
+                font-size: 1rem;
+                padding: 0 2rem;
+                transition: all 0.5s;
+                &:hover {
+                    color: $white;
+                    text-decoration: underline;
+                }
+
+                &:not(:last-child)::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 32%;
+                    height: 50%;
+                    width: 1px;
+                    background-color: $grey;
+                }
+            }
+        }
+        .btn {
+            background-color: transparent;
+            border: none;
+            color: $grey;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            padding: 0 2rem;
+            text-decoration: none;
+            &:hover {
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+    }
+    .header-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 960px;
+        margin: 20px auto;
+        padding: 0 20px;
+        text-align: center;
+
+        .logo {
+            margin: 0 auto;
+            padding-left: 7rem;
+        }
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: $grey;
+
+            font-size: 1.3rem;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: -2%;
+                height: 110%;
+                width: 1px;
+                background-color: #e0e0e0;
+            }
+        }
+    }
+    .navbar {
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 1.2rem;
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            li {
+                a {
+                    color: $grey;
+                    text-decoration: none;
+                    font-size: 1.3rem;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@use '../../sass/abstracts/variables' as *;
+
+.home {
+    background-image: url('/images/hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 192rem;
+    width: 100%;
+    height: 50rem;
+    padding: 12% 20rem 12% 80rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 16.8rem;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+}
+
+.letter {
+    font-size: 5.5rem;
+}
+
+.link {
+    width: 24.8rem;
+    background-color: $black;
+    color: $white;
+    font-size: $small;
+    padding: 0.5rem 0;
+}
+
+.list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.item {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.number {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: -1rem;
+}
+
+.subtitle {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.text {
+    font-size: $small;
+}

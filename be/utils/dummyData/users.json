@@ -1,0 +1,28 @@
+[
+  {
+    "name": "John",
+    "lastName": "Doe",
+    "email": "john.doe@gmail.com",
+    "password": "$2b$10$dtCnOk79A3aNuvRpMeKDcO.SWqFd6.ZM1qJgnRUEo6MLyoRt8zggy",
+    "role": "user",
+    "active": true,
+    "wishlist": [],
+    "_id": "63b9cf81dee6f6399a9d7c2c",
+    "addresses": [
+      {
+        "firstName": "John",
+        "lastName": "Doe",
+        "company": "Grid",
+        "address": "985 Pinnickinnick Street",
+        "country": "Poland",
+        "city": "Olkusz",
+        "state": "Oklahoma",
+        "zipCode": "08872",
+        "phone": "123-456-789",
+        "_id": "65c5ec254b520c5d2efda786"
+      }
+    ],
+    "createdAt": "2023-01-07T20:01:05.333Z",
+    "updatedAt": "2023-01-07T20:01:05.333Z"
+  }
+]

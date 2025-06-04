@@ -1,0 +1,64 @@
+@use '../../sass/abstracts/variables' as *;
+
+footer {
+    background-color: #000;
+    color: $grey;
+    font-size: 12px;
+    padding: 2rem 0;
+    width: 100%;
+
+    h4 {
+        color: $white;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 960px;
+        margin: 0 auto;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid $white;
+        .location {
+            display: flex;
+            gap: 2rem;
+            img {
+                width: 14rem;
+                height: 10rem;
+                padding-top: 1rem;
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        .about {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-left: 2rem;
+        }
+    }
+
+    .bottomBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 96rem;
+        margin: 1rem auto 0;
+
+        .socialIcons {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+
+            h4 {
+                padding-right: 1.5rem;
+            }
+        }
+    }
+}

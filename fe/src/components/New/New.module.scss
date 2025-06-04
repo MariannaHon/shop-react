@@ -1,0 +1,39 @@
+@use '../../sass/abstracts/variables' as *;
+
+.top {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    border: 1px solid $grey-light;
+    height: 1px;
+    width: 35.5rem;
+}
+
+.title {
+    font-size: $big;
+    font-weight: 400;
+    margin: 0 auto;
+}
+
+.list {
+    display: flex;
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.text {
+    font-size: $small-very;
+}

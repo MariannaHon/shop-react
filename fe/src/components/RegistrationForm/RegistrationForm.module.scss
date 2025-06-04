@@ -1,0 +1,88 @@
+@use '../../sass/abstracts/variables' as *;
+
+.form {
+    width: 68rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 18.7rem;
+}
+
+.top {
+    padding: 2rem 2.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-right: auto;
+    margin-left: 19rem;
+    font-weight: 400;
+    font-size: $big;
+}
+
+.required {
+    font-size: $small;
+    text-transform: none;
+    font-weight: 600;
+}
+
+.line {
+    width: 68rem;
+    border-bottom: 1px solid $grey-light;
+}
+
+.container {
+    padding: 4rem 2.6rem;
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-bottom: 0.5rem;
+    color: $grey;
+}
+
+.input {
+    width: 50rem;
+    height: 4rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25.4rem;
+    height: 3rem;
+    margin: 0 auto 2rem;
+    background-color: $black;
+    color: $grey-medium;
+    border: transparent;
+    padding: 2rem 0;
+
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.link {
+    margin: 0 auto 4rem;
+
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.error {
+    color: red;
+    font-size: $small;
+}

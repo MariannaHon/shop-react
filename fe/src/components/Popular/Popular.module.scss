@@ -1,0 +1,26 @@
+@use '../../sass/abstracts/variables' as *;
+
+.top {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: $big;
+    font-weight: 400;
+    margin-right: 0.5rem;
+    width: 100%;
+    max-width: 20rem;
+}
+
+.line {
+    border: 1px solid $grey-light;
+    height: 1px;
+    width: 100%;
+}
+
+.list {
+    display: flex;
+    padding: 0 1.6rem;
+    gap: 4rem;
+}

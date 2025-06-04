@@ -1,0 +1,31 @@
+.categoryGroup, .subcategoryGroup {
+    font-size: 1.1rem;
+}
+
+.categoryGroup {
+    margin-bottom: 1.4rem;
+}
+
+.subcategoryGroup {
+    margin-left: 1rem;
+}
+
+.categoryName {
+    font-weight: bold;
+    margin-bottom: .6rem;
+}
+
+.subcategoryName {
+    margin-bottom: .4rem;
+}
+
+.activeCategoryName {
+    font-size: 1.2rem;
+    font-weight: 1000;
+}
+
+.activeSubcategoryName {
+    font-weight: 1000;
+}
+
+p, li { cursor: pointer; }

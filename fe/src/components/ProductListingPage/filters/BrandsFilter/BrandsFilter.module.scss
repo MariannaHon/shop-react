@@ -1,0 +1,29 @@
+.checkboxFilterList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.filterItem {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+  
+.checkboxInput {
+    margin-right: 0.8rem;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    accent-color: #333; 
+    vertical-align: middle;
+}
+  
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    gap: 0.6rem;
+    user-select: none;
+}

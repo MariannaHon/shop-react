@@ -1,0 +1,133 @@
+[
+  {
+    "name": "Jeans",
+    "category": "63b9d58a01dc8bc2a732c34e",
+    "slug": "jeans",
+    "_id": "65c4d10d1f8d0934704edc04",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Pants",
+    "category": "63b9d58a01dc8bc2a732c34e",
+    "slug": "pants",
+    "_id": "65c4d13cd18eea820ec89ded",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Shorts",
+    "category": "63b9d58a01dc8bc2a732c34e",
+    "slug": "shorts",
+    "_id": "65c4d1484e9c14f746c20c9c",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Skirts",
+    "category": "63b9d58a01dc8bc2a732c34e",
+    "slug": "skirts",
+    "_id": "65c4d151cc3e2d527bce3826",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Dresses",
+    "category": "63b9d58a01dc8bc2a732c34e",
+    "slug": "dresses",
+    "_id": "65c4d1561a904088b34166b9",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+
+  {
+    "name": "Jackets & Coats",
+    "category": "63b9d61375a3b24e4c17a724",
+    "slug": "jackets-and-coats",
+    "_id": "65c4d1fa82ee86b0afeb92cf",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Shirts",
+    "category": "63b9d61375a3b24e4c17a724",
+    "slug": "shirts",
+    "_id": "65c4d1f78339c2ff45cf4843",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "T-shirts",
+    "category": "63b9d61375a3b24e4c17a724",
+    "slug": "t-shirts",
+    "_id": "65c4d1f4ef4ec65ad62b945b",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Knitwear",
+    "category": "63b9d61375a3b24e4c17a724",
+    "slug": "knitwear",
+    "_id": "65c4d1eee553f517631a6929",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Sweats",
+    "category": "63b9d61375a3b24e4c17a724",
+    "slug": "sweats",
+    "_id": "65c4d22ce1f6ad2984c8c845",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+
+  {
+    "name": "Sports Shoes",
+    "category": "63b9d67b909f069dd834a11e",
+    "slug": "sports-shoes",
+    "_id": "65c4e169775177b8967b5854",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Casual Shoes",
+    "category": "63b9d67b909f069dd834a11e",
+    "slug": "casual-shoes",
+    "_id": "65c4e16f502b44d11319120b",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Formal Shoes",
+    "category": "63b9d67b909f069dd834a11e",
+    "slug": "formal-shoes",
+    "_id": "65c4e172e430d8480f16be13",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+
+  {
+    "name": "Seasonal Favorites",
+    "category": "65c4d0b6a37f11cfe9a30892",
+    "slug": "seasonal-favorites",
+    "_id": "65c4e1d7061fc9bd644fe260",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Limited Editions",
+    "category": "65c4d0b6a37f11cfe9a30892",
+    "slug": "limited-editions",
+    "_id": "65c4e1ded0b7d387dddf5d38",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  },
+  {
+    "name": "Celebrity Picks",
+    "category": "65c4d0b6a37f11cfe9a30892",
+    "slug": "celebrity-picks",
+    "_id": "65c4e1e1071d29fb3ebd9b5e",
+    "createdAt": "2023-01-07T20:30:51.709Z",
+    "updatedAt": "2023-01-07T20:30:51.709Z"
+  }
+]

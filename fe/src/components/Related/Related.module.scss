@@ -1,0 +1,22 @@
+.related {
+    overflow-x: scroll;
+
+    &__header {
+        margin: 3rem 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__headerStripe {
+        margin-left: 3rem;
+        height: 2px;
+        background-color: lightgray;
+        flex-grow: 1;
+    }
+
+    &__products {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 8rem;
+    }
+}
