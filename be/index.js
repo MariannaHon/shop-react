@@ -65,7 +65,7 @@ app.all("*", (req, res, next) => {
 });
 
 const handleJwtInvalidSignature = () =>
-  new ApiError("Invalid token, please login again..", 401);
+  new APIError("Invalid token, please login again..", 401);
 
 // Global handling middlware
 app.use((err, req, res, next) => {
