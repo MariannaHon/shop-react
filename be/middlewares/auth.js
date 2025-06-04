@@ -1,8 +1,9 @@
-const ApiError = require("../utils/APIError");
 const jwt = require("jsonwebtoken");
+const { expressjwt } = require("express-jwt");
+const ApiError = require("../utils/APIError");
+
 const User = require("../models/userSchema");
 
-const { expressjwt } = require("express-jwt");
 require("dotenv").config(); // access environment variables
 
 exports.requireSignIn = expressjwt({
@@ -23,7 +24,7 @@ exports.requireSignIn = expressjwt({
 // };
 
 exports.isAdmin = (req, res, next) => {
-  if (req.auth.user_role == 0) {
+  if (req.auth.user_role === 0) {
     return res.status(403).json({ error: "Admin Resource, Access Denied !" });
   }
   next();
@@ -50,19 +51,15 @@ exports.requireLogIn = async (req, res, next) => {
   }
 
   // Verify token (no change happens, expired token)
-  const decoded = jwt.verify(
-    token,
-    process.env.JWT_SECRET,
-    function (err, decoded) {
-      if (err) {
-        if (err.name === "JsonWebTokenError") {
-          next(new ApiError(err.message, 401));
-        }
-      } else {
-        return decoded;
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      if (err.name === "JsonWebTokenError") {
+        next(new ApiError(err.message, 401));
       }
+    } else {
+      // Do something with decoded
     }
-  );
+  });
 
   if (decoded) {
     // Check if user exists
@@ -82,7 +79,7 @@ exports.requireLogIn = async (req, res, next) => {
 
 // @desc Make sure the user is logged in the same own url
 exports.isAuth = (req, res, next) => {
-  let user =
+  const user =
     req.Profile &&
     req.crUser &&
     JSON.stringify(req.Profile) === JSON.stringify(req.crUser);
