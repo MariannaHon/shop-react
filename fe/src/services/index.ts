@@ -7,7 +7,7 @@ import { IHttpClient } from './http/IHttpClient';
 import { ProductService } from './ProductService';
 import { UserService } from './UserService';
 
-export const apiBaseUrl = 'http://localhost:3000/api';
+export const apiBaseUrl = 'https://shop-react-ln08.onrender.com/api';
 
 const httpClient: IHttpClient = new AxiosClient();
 
