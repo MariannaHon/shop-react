@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch } from '@/redux/store';
 import { logOut } from '@/redux/auth/operations';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { selectCart } from '@/redux/cart/selectors';
 
 const Header = () => {
     const isLoggedIn = useSelector(selectIsLoggedIn);
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
+    const cart = useSelector(selectCart);
 
     const handleLogout = () => {
         dispatch(logOut());
@@ -55,7 +57,7 @@ const Header = () => {
                             width="23"
                             height="23"
                         />
-                        <span>CART (3)</span>
+                        <span>CART ({cart?.numOfCartItems})</span>
                     </a>
                 )}
             </div>

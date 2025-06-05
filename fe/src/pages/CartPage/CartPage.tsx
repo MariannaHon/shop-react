@@ -1,34 +1,68 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from '@/redux/store';
+import { AppDispatch } from '@/redux/store';
 import { getCart, updateCart, removeItem } from '@/redux/cart/operations';
 import styles from './CartPage.module.scss';
-import { DELIVERY_COST } from '@/constants';
-import { GIFT_VOUCHER } from '@/constants';
+import { DELIVERY_COST, GIFT_VOUCHER } from '@/constants';
+import { selectLoading, selectProducts } from '@/redux/products/selectors';
+import { fetchProducts } from '@/redux/products/operations';
+import { apiBaseUrl } from '@/services';
+import { selectCart, selectCartLoading } from '@/redux/cart/selectors';
 
 const CartPage = () => {
     const dispatch = useDispatch<AppDispatch>();
-    const cart = useSelector((state: RootState) => state.cart.cart);
-    const loading = useSelector((state: RootState) => state.cart.loading);
+    const cart = useSelector(selectCart);
+    const cartLoading = useSelector(selectCartLoading);
+    const productsLoading = useSelector(selectLoading);
+    const allProducts = useSelector(selectProducts);
+
     useEffect(() => {
         dispatch(getCart());
+        dispatch(fetchProducts());
     }, [dispatch]);
+
     const handleQuantityChange = (itemId: string, newQuantity: number) => {
         if (newQuantity < 1 || !cart) return;
         dispatch(updateCart({ itemId, quantity: newQuantity }));
     };
+
     const handleRemoveItem = (itemId: string) => {
         dispatch(removeItem({ itemId }));
     };
+
+    const cartItemsWithDetails = useMemo(() => {
+        if (!cart?.data?.cartItems || !allProducts?.length) {
+            return [];
+        }
+
+        return cart.data.cartItems.map(cartItem => {
+            const product = allProducts.find(p => p._id === cartItem.product);
+            return {
+                productId: cartItem.product,
+                cartSpecificId: cartItem._id,
+                title: product?.title,
+                image: `${apiBaseUrl}${product?.images?.[0]}`,
+                price: cartItem.price,
+                quantity: cartItem.quantity,
+                id: cartItem._id,
+            };
+        });
+    }, [cart, allProducts]);
+
     const subtotal =
         cart?.data.cartItems.reduce(
             (acc, item) => acc + item.price * item.quantity,
             0
         ) || 0;
+
     const total = subtotal + DELIVERY_COST - GIFT_VOUCHER;
+    const isLoading = cartLoading || productsLoading;
+
     return (
         <div className={styles.cartPageWrapper}>
-            {loading && <div className={styles.loadingOverlay}>Loading...</div>}
+            {isLoading && (
+                <div className={styles.loadingOverlay}>Loading...</div>
+            )}
             <div className={styles.cartPage}>
                 <div className={styles.backLinkContainer}>
                     <a href="#" className={styles.backLink}>
@@ -36,7 +70,7 @@ const CartPage = () => {
                     </a>
                 </div>
                 <h2 className={styles.cartTitle}>Cart</h2>
-                {!cart || cart.data.cartItems.length === 0 ? (
+                {!isLoading && cartItemsWithDetails.length === 0 ? (
                     <div className={styles.emptyCartMessage}>
                         <p className={styles.emptyCartText}>
                             Your cart is empty.
@@ -55,29 +89,26 @@ const CartPage = () => {
                             </div>
                             <div className={styles.headerAmount}>Amount</div>
                         </div>
-                        {cart.data.cartItems.map(item => (
-                            <div key={item._id} className={styles.cartItem}>
+                        {cartItemsWithDetails.map(item => (
+                            <div
+                                key={item.productId}
+                                className={styles.cartItem}
+                            >
                                 <div className={styles.productInfo}>
                                     <img
-                                        src={item.product}
-                                        alt={item.product}
+                                        src={item.image}
+                                        alt={item.title}
                                         className={styles.productImage}
                                     />
                                     <div>
                                         <h3 className={styles.productName}>
-                                            {item.product}
-                                        </h3>
-                                        <p className={styles.productColor}>
-                                            Color: {item.color}
-                                        </p>
-                                        <p className={styles.productSize}>
-                                            Size: S
-                                        </p>
+                                            {item.title}
+                                        </h3>{' '}
                                     </div>
                                     <button
                                         className={styles.removeButton}
                                         onClick={() =>
-                                            handleRemoveItem(item._id)
+                                            handleRemoveItem(item.id)
                                         }
                                     >
                                         x
@@ -95,7 +126,7 @@ const CartPage = () => {
                                             value={item.quantity}
                                             onChange={e =>
                                                 handleQuantityChange(
-                                                    item._id,
+                                                    item.id,
                                                     parseInt(e.target.value, 10)
                                                 )
                                             }
@@ -108,7 +139,7 @@ const CartPage = () => {
                                                 }
                                                 onClick={() =>
                                                     handleQuantityChange(
-                                                        item._id,
+                                                        item.id,
                                                         item.quantity + 1
                                                     )
                                                 }
@@ -132,7 +163,7 @@ const CartPage = () => {
                                                 className={`${styles.quantityButton} ${styles.quantityButtonMinus}`}
                                                 onClick={() =>
                                                     handleQuantityChange(
-                                                        item._id,
+                                                        item.id,
                                                         item.quantity - 1
                                                     )
                                                 }
@@ -145,8 +176,8 @@ const CartPage = () => {
                                                     xmlns="http://www.w3.org/2000/svg"
                                                 >
                                                     <path
-                                                        fill-rule="evenodd"
-                                                        clip-rule="evenodd"
+                                                        fillRule="evenodd"
+                                                        clipRule="evenodd"
                                                         d="M6.00001 11.25L18 11.25L18 12.75L6.00001 12.75L6.00001 11.25Z"
                                                         fill="#080341"
                                                     />
@@ -165,7 +196,6 @@ const CartPage = () => {
                                 </div>
                             </div>
                         ))}
-
                         <div className={styles.totals}>
                             <div className={styles.totalRow}>
                                 <span className={styles.totalLabel}>
