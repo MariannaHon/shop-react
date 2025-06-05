@@ -10,6 +10,10 @@ const cors = require("cors");
 
 app.use(cors());
 
+const mongoose = require("mongoose");
+
+mongoose.set("strictQuery", false);
+
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const db = require("./config/database"); // Connect to Database
