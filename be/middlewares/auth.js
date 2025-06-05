@@ -32,7 +32,6 @@ exports.isAdmin = (req, res, next) => {
 
 // @desc Make sure the user is logged in
 exports.requireLogIn = async (req, res, next) => {
-  //   Check if token exist, if exist get token
   let token;
   if (
     req.headers.authorization &&
@@ -50,19 +49,9 @@ exports.requireLogIn = async (req, res, next) => {
     );
   }
 
-  // Verify token (no change happens, expired token)
-  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    if (err) {
-      if (err.name === "JsonWebTokenError") {
-        next(new ApiError(err.message, 401));
-      }
-    } else {
-      // Do something with decoded
-    }
-  });
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-  if (decoded) {
-    // Check if user exists
     const currentUser = await User.findById(decoded.user_id);
     if (!currentUser) {
       return next(
@@ -72,8 +61,11 @@ exports.requireLogIn = async (req, res, next) => {
         )
       );
     }
+
     req.crUser = currentUser;
     next();
+  } catch (err) {
+    return next(new ApiError("Invalid token, please login again", 401));
   }
 };
 
