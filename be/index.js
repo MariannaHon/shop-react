@@ -8,7 +8,12 @@ require("dotenv").config(); // access environment variables
 
 const cors = require("cors");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://shop-react-beta.vercel.app",
+    credentials: true,
+  })
+);
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
