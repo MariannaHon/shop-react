@@ -11,6 +11,7 @@ export class AxiosClient implements IHttpClient {
 
     constructor() {
         this.axiosInstance = axios.create({
+            withCredentials: true,
             headers: {
                 'Content-Type': 'application/json',
             },
