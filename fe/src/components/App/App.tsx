@@ -16,7 +16,9 @@ const NoResultsPage = lazy(
     () => import('../../pages/NoResultsPage/NoResultsPage')
 );
 
-const ProductListingPage = lazy(() => import('../../pages/ProductListingPage/ProductListingPage'));
+const ProductListingPage = lazy(
+    () => import('../../pages/ProductListingPage/ProductListingPage')
+);
 
 const ProductDetailPage = lazy(
     () => import('../../pages/ProductDetailPage/ProductDetailPage')
