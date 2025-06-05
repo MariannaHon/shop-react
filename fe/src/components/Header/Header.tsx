@@ -5,6 +5,7 @@ import type { AppDispatch } from '@/redux/store';
 import { logOut } from '@/redux/auth/operations';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { selectCart } from '@/redux/cart/selectors';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -40,9 +41,9 @@ const Header = () => {
                             LOG OUT
                         </button>
                     ) : (
-                        <a href="/login" className={styles['links-main']}>
+                        <Link to="/login" className={styles['links-main']}>
                             LOG IN
-                        </a>
+                        </Link>
                     )}
                 </div>
             </div>
@@ -50,7 +51,7 @@ const Header = () => {
                 <div className={`${styles.logo} heading--2`}>THE SHOP</div>
 
                 {isLoggedIn && (
-                    <a href="/cart" className={styles.cart}>
+                    <Link to="/cart" className={styles.cart}>
                         <img
                             src="/icons/Cart.svg"
                             alt="Cart icon"
@@ -58,7 +59,7 @@ const Header = () => {
                             height="23"
                         />
                         <span>CART ({cart?.numOfCartItems})</span>
-                    </a>
+                    </Link>
                 )}
             </div>
 
