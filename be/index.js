@@ -8,7 +8,15 @@ require("dotenv").config(); // access environment variables
 
 const cors = require("cors");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://shop-react-beta.vercel.app",
+      "https://shop-react-beta.vercel.app/api",
+    ],
+    credentials: true,
+  })
+);
 
 const mongoose = require("mongoose");
 
