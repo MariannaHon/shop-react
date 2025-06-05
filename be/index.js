@@ -10,8 +10,10 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin:
-      "https://shop-react-beta.vercel.app, https://shop-react-beta.vercel.app/api",
+    origin: [
+      "https://shop-react-beta.vercel.app",
+      "https://shop-react-beta.vercel.app/api",
+    ],
     credentials: true,
   })
 );
